@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* General Styles & Resets */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Layout & Appearance */
+.mainContainer {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.taskOne div>div {
+    border: 1px dashed #333;
+    font-size: 4rem;
+}
+
+section {
+    padding: 2em 0;
+}
+
+p {
+    margin-bottom: 2em;
+}
+
+.taskThree .grid div {
+    padding: 2em; 
+}
+
+.taskOne .container div {
+    text-align:center; 
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+    margin: 2em auto; 
+}
+
+/*Typography */
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* looks more like the provided example when live server is full screen */
+/* TASK ONE */
+
+.taskOne .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }  
+
+/* TASK TWO */
+
+.taskTwo .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 100px 100px;
+    gap: 10px;
+    position: relative; /* add relative positioning to container */
+}
+
+.item1 {
+    background-color: rgb(257,87,20); 
+    grid-column: 1 / 3;
+    grid-row: 1;
+    height: 180px; 
+}
+
+.item2 {
+    background-color: rgba(232,170, 20, 0.5); 
+    grid-column: 2 / 4;
+    grid-row: 2;
+    height: 180px;
+    position: relative;
+    margin-top: -55px; /* move up */
+    margin-left: -60px; /* move slightly to the left */
+    left: -20px; /* adjusting item2's horizontal position with left property */
+}
+
+/* TASK THREE */ 
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr) 1fr; /* defining 3 rows */          
+    gap: 20px;
+    grid-template-areas:
+    "one two" /* defining grid areas */
+    "three four"
+    "five four";
+  }
+  
+  .one {
+    background-color: #D1495B;
+    grid-area: 1 / 1 / 2 / 3; /* assigning grid area to item & span both columns & rows */
+}
+  
+  .two {
+    background-color: #00798C;
+    grid-area: three; /* assigning grid area to item */
+  }
+  
+  .three {
+    background-color: #EDAE49;
+    grid-area: four; /* assigning grid area to item */
+    grid-area: 2 / 2 / 2 / 3; /* assigning grid area to item & span both columns & rows */
+  }
+  
+  .four {
+    background-color: #30638E; 
+    grid-area: two; /* assigning grid area to item */
+    grid-area: 3 / 2 / 3 / 3; /* assigning grid area to item & span both columns & rows */
+  }
+  .five {
+    background-color: #6B5B95; 
+    grid-area: five; /* Assign grid area to item */
+  }
+
+  /* Challenges Adapted from https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grid_skills */ 
